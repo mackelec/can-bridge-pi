@@ -1,0 +1,13 @@
+[Unit]
+Description=CAN bridge manager (CAN ↔ TCP via canip_peer)
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/can_bridge_manager.sh start
+ExecStop=/usr/local/bin/can_bridge_manager.sh stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
